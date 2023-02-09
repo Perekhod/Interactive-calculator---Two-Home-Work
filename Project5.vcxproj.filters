@@ -15,8 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ЗАДАНИЕ 2.11.1 %28HW-03%29-Переход И.С.cpp">
+    <ClCompile Include="Interactive-calculator---Two-Home-Work.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

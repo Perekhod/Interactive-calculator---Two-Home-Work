@@ -24,7 +24,7 @@
     <ProjectGuid>{8203531c-6f9f-4105-863e-0b09ab0b098b}</ProjectGuid>
     <RootNamespace>Project5</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>ЗАДАНИЕ 2.11.1 (HW-03)</ProjectName>
+    <ProjectName>Interactive-calculator---Two-Home-Work</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -128,7 +128,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ЗАДАНИЕ 2.11.1 %28HW-03%29-Переход И.С.cpp" />
+    <ClCompile Include="Interactive-calculator---Two-Home-Work.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
