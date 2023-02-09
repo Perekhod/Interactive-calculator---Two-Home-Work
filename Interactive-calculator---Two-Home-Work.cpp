@@ -2,106 +2,105 @@
 //Interactive-calculator
 
 #include <iostream>
-using namespace std;
 
 int main()
 {
-	cout << "Hello, Me - Interactive Calculator by Perekhod v0.1!\n\n";
+	std::cout << "Hello, Me - Interactive Calculator by Perekhod v0.1!\n\n";
 	repeat: // Return if the user wants to continue using the calculator (lines 12 and 115)
-	cout << "Please enter two integers on which the mathematical operations will be performed:\n";
+	std::cout << "Please enter two integers on which the mathematical operations will be performed:\n";
 
-	int a, b;
-	cin >> a >> b;
+	int numberOne, numberTwo;
+	std::cin >> numberOne >> numberTwo;
 
 	char menu;
 
-	cout << "What mathematical operation do you want to apply to the entered numbers?\n";
-	cout << "List of implemented operations in this version: '+' '-' '*' '/' '!' '^' \n";
+	std::cout << "What mathematical operation do you want to apply to the entered numbers?\n";
+	std::cout << "List of implemented operations in this version: '+' '-' '*' '/' '!' '^' \n";
 
-	cin >> menu;
+	std::cin >> menu;
 
 	switch (menu)
 	{
 	case '+':
-		cout << a << " + " << b << " = " << a + b << endl;
+		std::cout << numberOne << " + " << numberTwo << " = " << numberOne + numberTwo << "\n";
 		break;
 
 	case '-':
-		cout << a << " - " << b << " = " << a - b << endl;
+		std::cout << numberOne << " - " << numberTwo << " = " << numberOne - numberTwo << "\n";
 		break;
 
 	case '*':
-		cout << a << " * " << b << " = " << a * b << endl;
+		std::cout << numberOne << " * " << numberTwo << " = " << numberOne * numberTwo << "\n";
 		break;
 
 	case '/':
-		if (b == 0)
+		if (numberTwo == 0)
 		{
-			cout << "Oh, you can't divide by zero! Enter another divisor:\n";
-			cin >> b;
+			std::cout << "Oh, you can't divide by zero! Enter another divisor:\n";
+			std::cin >> numberTwo;
 			goto zero;
 		}
 	zero:// Return if user divides by 0(44 and 46 row)
-		cout << a << " / " << b << " = " << a / b << endl;
+		std::cout << numberOne << " / " << numberTwo << " = " << numberOne / numberTwo << "\n";
 		break;
 
 	case '!':
-		cout << "You requested the 'Factorial' operation, but it only works on one number, and you entered two.\n";
-		cout << "From what number will we calculate the 'Factorial'?" << a << " или " << b << " ? \n";
+		std::cout << "You requested the 'Factorial' operation, but it only works on one number, and you entered two.\n";
+		std::cout << "From what number will we calculate the 'Factorial'? " << numberOne << " or " << numberTwo << " ? \n";
 
 		int value, factorial;
-		cin >> value;
+		std::cin >> value;
 		factorial = 1;
 
 	repeatfact:  // Return if the user entered neither a nor b (lines 58 and 82)
-		if (value == a)
+		if (value == numberOne)
 		{
 			for (int i = 1; i <= value; i++)
 			{
 				factorial *= i;
 			}
-			cout << "Factorial of a number " << value << " = " << factorial << endl;
+			std::cout << "Factorial of a number " << value << " = " << factorial << "\n";
 			break;
 		}
-		else if (value == b)
+		else if (value == numberTwo)
 		{
 			for (int j = 1; j <= value; j++)
 			{
 				factorial *= j;
 			}
-			cout << "Factorial of a number " << value << " = " << factorial << endl;
+			std::cout << "Factorial of a number " << value << " = " << factorial << "\n";
 			break;
 		}
 		else
 		{
-			cout << "Oops, you entered a different number!\n";
-			cout << "Enter " << a << " or " << b << endl;
-			cin >> value;
+			std::cout << "Oops, you entered a different number!\n";
+			std::cout << "Enter " << numberOne << " or " << numberTwo << "\n";
+			std::cin >> value;
 			goto repeatfact;
 			break;
 		}
 
 	case '^':
 	{
-		int i = 1, stepen = 1;
-		while (i <= b)
+		int i = 1, extent = 1;
+		while (i <= numberTwo)
 		{
-			stepen *= int(a);
+			extent *= numberOne;
 			i++;
 		}
-		cout << a << "to the extent " << b << " = " << stepen << endl;
+		std::cout << numberOne << " to the extent " << numberTwo << " = " << extent << "\n";
 		break;
 	}
 	default:
-		cout << "\nOops... This symbol does not apply to implemented operations in the version 1.0!\n\n";
+		std::cout << "\nOops... This symbol does not apply to implemented operations in the version 1.0!\n\n";
 	}
 
-	cout << "To exit the interactive calculator press 'q', for the next operation 'r'\n";
+	std::cout << "To exit the interactive calculator press 'q', for the next operation 'r'\n";
 
 	inccorect:// Return if the user entered the wrong character (lines 103 and 121)
 
 	char end;
-	cin >> end;
+	std::cin >> end;
 
 	switch (end)
 	{
@@ -109,15 +108,14 @@ int main()
 		break;
 
 	case 'r':
-		cout << "\n";
+		std::cout << "\n";
 		goto repeat;
 		break;
 
 	default:
-		cout << "Oops, you entered the wrong character.!\n";
-		cout << "Reminder - to exit the interactive calculator, press 'q', to reuse 'r'\n";
+		std::cout << "Oops, you entered the wrong character.!\n";
+		std::cout << "Reminder - to exit the interactive calculator, press 'q', to reuse 'r'\n";
 		goto inccorect;
 		break;
 	}
-	return 0;
 }
